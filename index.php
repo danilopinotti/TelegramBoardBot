@@ -11,16 +11,20 @@
 	$bot->loadBoard();
 ?>
 
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Board BOT</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="<?= ASSETS_FOLDER ?>/css/application.css">
+		<style>
+			@import url("<?= ASSETS_FOLDER ?>/fonts/OpenSans-ExtraBold.ttf");
+		</style>
 	</head>
 	<body>
-
-		<?php include($bot->getBoard()); ?>
+		<div class="message-container">
+			<?php include($bot->getBoard()); ?>
+		</div>
 
 		<script src="<?= ASSETS_FOLDER ?>/js/jquery-1.12.3.min.js"></script>
 		<script src="<?= ASSETS_FOLDER ?>/js/application.js"></script>
