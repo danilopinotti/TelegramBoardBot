@@ -40,7 +40,10 @@
 		//Verify if atual status from board is equivalent to telegram chat and load if not
 		public function loadBoard(){
 			$updates = json_decode(@file_get_contents("https://api.telegram.org/bot".$this->token."/getUpdates", true));
-			//print_r($updates);
+			if(!$updates){
+				echo "Sem conexão com a internet.";
+				return;
+			}
 
 			$last_result_id = sizeof($updates->result);
 			if($last_result_id){
