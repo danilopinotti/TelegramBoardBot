@@ -7,7 +7,7 @@
 		private $configs;
 		private $models_folder;
 
-		function __construct($token, $bot_name, $valid_boards, $models_folder = "./models/", $config_file = "./.config.php"){
+		function __construct($token, $bot_name, $valid_boards, $models_folder = "./models/", $config_file = "./.config"){
 			$this->configs = new Configuration($config_file);
 			$this->token = $token;
 			$this->bot_name = $bot_name;
@@ -38,13 +38,22 @@
 		}
 
 		//Verify if atual status from board is equivalent to telegram chat and load if not
-		public function loadBoard(){
+		public function loadBoard(){			
+			//Update with offline command
+			if($this->configs->getConfiguration("last_board_off") != $this->configs->getConfiguration("last_board")){
+				$this->configs->setConfiguration("last_board", $this->configs->getConfiguration("last_board_off"));
+				//Offline configuration have priority.
+				return;
+			}
+
+			//Invalid token or without Internet connection
 			$updates = json_decode(@file_get_contents("https://api.telegram.org/bot".$this->token."/getUpdates", true));
 			if(!$updates){
 				echo "Sem conexão com a internet.";
 				return;
 			}
 
+			//Update with telegram command
 			$last_result_id = sizeof($updates->result);
 			if($last_result_id){
 			
@@ -69,6 +78,7 @@
 					$model_name = $this->getModelName($text);
 					if($model_name){
 						$this->configs->setConfiguration("last_board",$model_name);
+						$this->configs->setConfiguration("last_board_off",$model_name);
 						$this->sendMessage("Status alterado", $chat_id, $message_id);
 					}
 				}
@@ -84,7 +94,7 @@
 
 		//Return the board file reference.
 		public function getBoard(){
-			return $this->models_folder.$this->configs->getConfiguration("last_board").".php";
+			return $this->models_folder.$this->configs->getConfiguration("last_board").".phtml";
 		}
 
 		public function setWhiteList($white_list){
@@ -97,9 +107,15 @@
 			else
 				$this->models_folder = $models_folder;	
 		}
-		public static function haveUpdates($token){
+
+
+
+		//This function return if have or not updates
+		public static function haveUpdates($token, $config_file){
+			$configs = new Configuration($config_file);
 			$updates = @json_decode(file_get_contents("https://api.telegram.org/bot".$token."/getUpdates", true));
-			if(sizeof($updates->result))
+
+			if(sizeof($updates->result) || $configs->getConfiguration("last_board_off") != $configs->getConfiguration("last_board"))
 				return "true";
 			else
 				return "false";
@@ -112,7 +128,8 @@
 		function __construct($file){
 			if(!file_exists($file)){
 				$configs = array();
-				$configs["last_board"] = "default";
+				$configs["last_board"] = "aberto";
+				$configs["last_board_off"] = "aberto";
 				file_put_contents($file, serialize($configs));
 			}
 			$this->file = $file;

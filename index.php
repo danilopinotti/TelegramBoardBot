@@ -17,7 +17,7 @@
 		<title>Board BOT</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="<?= ASSETS_FOLDER ?>/css/application.css">
-		<meta http-equiv="refresh" content="2" >
+		<!-- <meta http-equiv="refresh" content="120" > -->
 		<style>
 			@import url("<?= ASSETS_FOLDER ?>/fonts/OpenSans-ExtraBold.ttf");
 		</style>

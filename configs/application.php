@@ -1,5 +1,5 @@
 <?php
-	define("SITE_ROOT", "./");
+	define("SITE_ROOT", "/github");
 	define("APP_ROOT_FOLDER", $_SERVER['DOCUMENT_ROOT'] . "/" . SITE_ROOT . "/");
 	define("ASSETS_FOLDER", SITE_ROOT."/assets");
 
