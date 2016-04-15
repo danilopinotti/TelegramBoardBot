@@ -3,7 +3,7 @@
 
 	$telegramBotConfig["valid_boards"] = array( // Message from TELEGRAM CHAT => board name
 	    "/reuniao" => "reuniao",
-	    "/aberto" => "default"
+	    "/aberto" => "aberto"
 	);
 
 	$telegramBotConfig["white_list"] = array(	//Allowed persons (ID or Username) to interact with BOT
@@ -11,8 +11,8 @@
 		"144880123"
 	);
 
-	$telegramBotConfig["token"] = "166840928:AAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	$telegramBotConfig["token"] = "1111111:IAOAIUHPKASIJDOAJSDP";
 	$telegramBotConfig["bot_name"] = "@PinottiTestBot";
 	$telegramBotConfig["models_folder"] = "./boards";
-	$telegramBotConfig["config_file"] = "./config.php";
+	$telegramBotConfig["config_file"] = "./.config";
 ?>

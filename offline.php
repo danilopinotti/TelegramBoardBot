@@ -16,8 +16,16 @@
 
 
 ?>
-<form action="offline.php" method="POST" name="board">
-	<?php foreach ($boards as $board): ?>
-		<input name="board" type="submit" value="<?= $board ?>">
-	<?php endforeach; ?>
-</form>
+<!DOCTYPE html>
+<html>
+	<head>
+		 <title>BoardBot: Painel Offline</title>
+	</head>
+	<body>
+		<form action="offline.php" method="POST" name="board">
+			<?php foreach ($boards as $board): ?>
+				<input name="board" type="submit" value="<?= $board ?>">
+			<?php endforeach; ?>
+		</form>
+	</body>
+</html>

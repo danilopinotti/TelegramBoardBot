@@ -113,9 +113,13 @@
 		//This function return if have or not updates
 		public static function haveUpdates($token, $config_file){
 			$configs = new Configuration($config_file);
+			if ($configs->getConfiguration("last_board_off") != $configs->getConfiguration("last_board")){
+				return "true";
+			}
+
 			$updates = @json_decode(file_get_contents("https://api.telegram.org/bot".$token."/getUpdates", true));
 
-			if(sizeof($updates->result) || $configs->getConfiguration("last_board_off") != $configs->getConfiguration("last_board"))
+			if(sizeof($updates->result))
 				return "true";
 			else
 				return "false";

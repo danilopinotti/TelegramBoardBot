@@ -23,6 +23,8 @@
 		</style>
 	</head>
 	<body>
+		<span class="bar black"></span>
+		<span class="bar yellow"></span>
 		<div class="message-container">
 			<?php include($bot->getBoard()); ?>
 		</div>

@@ -8,3 +8,20 @@
 	font-weight: 700;
 	font-size: 2em;
 }
+.bar{
+    height: 25px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+}
+
+.bar.yellow{
+    background-color: #FFCD18;
+    top: 40px;
+}
+
+.bar.black{
+	background-color: black;
+	height: 40px;
+	top: 0;
+}
