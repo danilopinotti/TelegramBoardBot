@@ -5,7 +5,7 @@
 	if(isset($_POST['board'])){
 		$configs = new Configuration($telegramBotConfig["config_file"]);
 		$configs->setConfiguration("last_board_off", $_POST['board']);
-		echo "Status alterado para \"".$_POST['board']."\""
+		echo "Status alterado para \"".$_POST['board']."\"";
 	}
 
 	$boards_raw = array_slice(scandir($telegramBotConfig["models_folder"]), 2);
