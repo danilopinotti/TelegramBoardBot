@@ -8,7 +8,7 @@
 		echo "Status alterado para \"".$_POST['board']."\"";
 	}
 
-	$boards_raw = array_slice(scandir($telegramBotConfig["models_folder"]), 2);
+	$boards_raw = array_slice(scandir($telegramBotConfig["boards_folder"]), 2);
 	$boards = [];
 	foreach ($boards_raw as $board) {
 		$boards[] = preg_replace('/\\.[^.\\s]{3,5}$/', '', $board);

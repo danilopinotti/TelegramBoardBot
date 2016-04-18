@@ -5,14 +5,14 @@
 		private $valid_boards;
 		private $white_list;
 		private $configs;
-		private $models_folder;
+		private $boards_folder;
 
-		function __construct($token, $bot_name, $valid_boards, $models_folder = "./models/", $config_file = "./.config"){
+		function __construct($token, $bot_name, $valid_boards, $boards_folder = "./boards/", $config_file = "./.config"){
 			$this->configs = new Configuration($config_file);
 			$this->token = $token;
 			$this->bot_name = $bot_name;
 			$this->valid_boards = $valid_boards;
-			$this->setModelsFolder($models_folder);
+			$this->setModelsFolder($boards_folder);
 		}
 
 		//Method to send message to telegram
@@ -75,10 +75,10 @@
 				$text = preg_replace($match, "", $text);		
 
 				if(substr($text,0,1) == "/"){
-					$model_name = $this->getModelName($text);
-					if($model_name){
-						$this->configs->setConfiguration("last_board",$model_name);
-						$this->configs->setConfiguration("last_board_off",$model_name);
+					$board_name = $this->getModelName($text);
+					if($board_name){
+						$this->configs->setConfiguration("last_board",$board_name);
+						$this->configs->setConfiguration("last_board_off",$board_name);
 						$this->sendMessage("Status alterado", $chat_id, $message_id);
 					}
 				}
@@ -94,18 +94,18 @@
 
 		//Return the board file reference.
 		public function getBoard(){
-			return $this->models_folder.$this->configs->getConfiguration("last_board").".phtml";
+			return $this->boards_folder.$this->configs->getConfiguration("last_board").".phtml";
 		}
 
 		public function setWhiteList($white_list){
 			$this->white_list = $white_list;
 		}
 
-		public function setModelsFolder($models_folder){
-			if(substr($models_folder, -1) != "/")
-				$this->models_folder = $models_folder."/";
+		public function setModelsFolder($boards_folder){
+			if(substr($boards_folder, -1) != "/")
+				$this->boards_folder = $boards_folder."/";
 			else
-				$this->models_folder = $models_folder;	
+				$this->boards_folder = $boards_folder;	
 		}
 
 

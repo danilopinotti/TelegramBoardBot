@@ -13,6 +13,6 @@
 
 	$telegramBotConfig["token"] = "1111111:IAOAIUHPKASIJDOAJSDP";
 	$telegramBotConfig["bot_name"] = "@PinottiTestBot";
-	$telegramBotConfig["models_folder"] = "./boards";
+	$telegramBotConfig["boards_folder"] = "./boards";
 	$telegramBotConfig["config_file"] = "./.config";
 ?>

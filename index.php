@@ -5,7 +5,7 @@
 	$bot = new BoardBot($telegramBotConfig["token"], 
 						$telegramBotConfig["bot_name"], 
 						$telegramBotConfig["valid_boards"], 
-						$telegramBotConfig["models_folder"], 
+						$telegramBotConfig["boards_folder"], 
 						$telegramBotConfig["config_file"]);
 	$bot->setWhiteList($telegramBotConfig["white_list"]);
 	$bot->loadBoard();
