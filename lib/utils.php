@@ -154,4 +154,19 @@ function files_in_directory($directory, $without_extension = false){
     return $files_raw;
 }
 
+
+function load_commands($db_file){
+    $commands = array();
+    if(file_exists($db_file)){
+      $telegram_commands = unserialize(file_get_contents($db_file));
+      foreach($telegram_commands as $command => $board){
+        if (substr($command, 0, 1) == '/')
+          $commands[$command] = $board;
+        else
+          $commands["/".$command] = $board;
+      }
+    }
+    return $commands;
+}
+
 ?>
