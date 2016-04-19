@@ -15,6 +15,6 @@
 
 	$telegramBotConfig["token"] = "1111111:IAOAIUHPKASIJDOAJSDP";
 	$telegramBotConfig["bot_name"] = "@PinottiBoardBot";
-	$telegramBotConfig["boards_folder"] = "./boards";
-	$telegramBotConfig["config_file"] = "./.config";
+	$telegramBotConfig["boards_folder"] = APP_ROOT_FOLDER."/boards";
+	$telegramBotConfig["config_file"] = APP_ROOT_FOLDER."/.config";
 ?>

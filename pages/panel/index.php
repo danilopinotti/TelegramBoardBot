@@ -1,29 +1,11 @@
 <?php
-	include "configs/application.php";
-	include "BoardBot.php";
-
-	$message = '';
-	if(isset($_POST['change-board'])){
-		$configs = new Configuration($telegramBotConfig["config_file"]);
-		$configs->setConfiguration("last_board_off", $_POST['change-board']);
-		$message = '<div class="alert alert-success" role="alert">Status alterado para <strong>'.$_POST['change-board'].'</strong></div>';
-	}
-
-	$boards_raw = array_slice(scandir($telegramBotConfig["boards_folder"]), 2);
-	$boards = [];
-	foreach ($boards_raw as $board) {
-		$boards[] = preg_replace('/\\.[^.\\s]{3,5}$/', '', $board);
-	}
-
-
+	$boards = files_in_directory($telegramBotConfig["boards_folder"], true);
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>BoardBot: Painel Offline</title>
-		<link rel="stylesheet" type="text/css" href="<?= ASSETS_FOLDER ?>/css/application.css">
-		<link rel="stylesheet" type="text/css" href="<?= ASSETS_FOLDER ?>/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="<?= ASSETS_FOLDER ?>/css/bootstrap-theme.min.css">
+		<?= stylesheet_include_tags("application.css", "bootstrap.min.css", "bootstrap-theme.min.css"); ?>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -50,7 +32,12 @@
 				</div>
 			</div>
 		</nav>
-		<?= $message ?>
+		<?php foreach (flash() as $flash_type => $flash_msg): ?>
+         <div class="alert alert-<?= $flash_type ?>" role="alert">
+           <a class="close" data-dismiss="alert">x</a>
+           <p><?= $flash_msg ?></p>
+         </div>
+      <?php endforeach ?>
 		<div class="container">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -61,7 +48,7 @@
 				<div class="panel-body">
 					<p>Escolha a placa para ser definida:</p>
 					
-					<form action="offline.php" method="POST" name="change-board">
+					<form action="receive.php" method="POST" name="change-board">
 						<?php foreach ($boards as $board): ?>
 							<input name="change-board" type="submit" value="<?= $board ?>" class="btn btn-default">
 						<?php endforeach; ?>
@@ -102,7 +89,6 @@
 				</div>
 			</div>
 		</div>
-		<script src="<?= ASSETS_FOLDER ?>/js/jquery-1.12.3.min.js"></script>
-		<script src="<?= ASSETS_FOLDER ?>/js/bootstrap.js"></script>
+		<?= javascript_include_tags("jquery-1.12.3.min.js", "bootstrap.min.js") ?>
 	</body>
 </html>

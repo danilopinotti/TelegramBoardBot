@@ -6,5 +6,8 @@
 	set_include_path(get_include_path() . PATH_SEPARATOR .  APP_ROOT_FOLDER);
 	set_include_path(get_include_path() . PATH_SEPARATOR .  APP_ROOT_FOLDER . "models");
 
+	require "lib/utils.php";
+	require "auto_load_class.php";
 	require "bot_configs.php";
+	session_start();
 ?>

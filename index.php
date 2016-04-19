@@ -1,7 +1,4 @@
 <?php
-	include "configs/application.php";
-	include "BoardBot.php";
-
 	$bot = new BoardBot($telegramBotConfig["token"], 
 						$telegramBotConfig["bot_name"], 
 						$telegramBotConfig["valid_boards"], 
