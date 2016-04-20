@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>BoardBot: Painel Offline</title>
-		<?= stylesheet_include_tags("application.css", "bootstrap.min.css", "bootstrap-theme.min.css"); ?>
+		<title><?= APP_NAME ?>: Painel Offline</title>
+		<?= ViewHelpers::stylesheetIncludeTag("application.css", "bootstrap.min.css", "bootstrap-theme.min.css"); ?>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 		</nav>
-		<?php foreach (flash() as $flash_type => $flash_msg): ?>
+		<?php foreach (Flash::message() as $flash_type => $flash_msg): ?>
          <div class="alert alert-<?= $flash_type ?>" role="alert">
            <a class="close" data-dismiss="alert">x</a>
            <p><?= $flash_msg ?></p>
@@ -39,6 +39,6 @@
 			<?php require "_boards_panel.php" ?>
 			<?php require "_create_board_panel.php" ?>
 		</div>
-		<?= javascript_include_tags("jquery-1.12.3.min.js", "bootstrap.min.js") ?>
+		<?= ViewHelpers::javascriptIncludeTag("jquery-1.12.3.min.js", "bootstrap.min.js") ?>
 	</body>
 </html>

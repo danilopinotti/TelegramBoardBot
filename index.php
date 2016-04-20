@@ -11,9 +11,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Board BOT</title>
+		<title><?= APP_NAME ?></title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="<?= ASSETS_FOLDER ?>/css/application.css">
+		<?= ViewHelpers::stylesheetIncludeTag("application.css"); ?>
 		<!-- <meta http-equiv="refresh" content="120" > -->
 		<style>
 			@import url("<?= ASSETS_FOLDER ?>/fonts/OpenSans-ExtraBold.ttf");
@@ -25,8 +25,6 @@
 		<div class="message-container">
 			<?php include($bot->getBoard()); ?>
 		</div>
-
-		<script src="<?= ASSETS_FOLDER ?>/js/jquery-1.12.3.min.js"></script>
-		<script src="<?= ASSETS_FOLDER ?>/js/application.js"></script>
+		<?= ViewHelpers::javascriptIncludeTag("jquery-1.12.3.min.js", "application.js"); ?>
 	</body>
 </html>

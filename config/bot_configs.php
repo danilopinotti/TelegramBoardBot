@@ -1,6 +1,6 @@
 <?php
 	$telegramBotConfig = array();
-	$telegramBotConfig["valid_boards"] = load_commands(SITE_ROOT."/db/telegram_commands");
+	$telegramBotConfig["valid_boards"] = FileHelpers::getTelegramCommands(SITE_ROOT."/db/telegram_commands");
 
 	array_merge($telegramBotConfig["valid_boards"], array(// Message from TELEGRAM CHAT => board name
 	    "/reuniao" => "reuniao",
@@ -18,4 +18,5 @@
 	$telegramBotConfig["bot_name"] = "@PinottiBoardBot";
 	$telegramBotConfig["boards_folder"] = APP_ROOT_FOLDER."/boards";
 	$telegramBotConfig["config_file"] = APP_ROOT_FOLDER."/.config";
+	
 ?>
