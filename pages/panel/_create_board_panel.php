@@ -5,7 +5,7 @@
 		</h3>
 	</div>
 	<div class="panel-body">
-		<form role="form" action="offline.php" method="POST" name="create-board">
+		<form role="form" action="create.php" method="POST" name="create-board">
 			<label for="board-name">Nome do aviso:</label>
 			<div class="form-group">
 				<input type="text" class="form-control" id="board-name" name="boardName" placeholder="Nome do aviso" aria-describedby="boardName">

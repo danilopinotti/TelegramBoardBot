@@ -1,5 +1,5 @@
 <?php 
-	$boards = files_in_directory($telegramBotConfig["boards_folder"], true);
+	$boards = FileHelpers::filesInDirectory($telegramBotConfig["boards_folder"], true);
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading">
@@ -10,7 +10,7 @@
 	<div class="panel-body">
 		<p>Escolha a placa para ser definida:</p>
 		
-		<form action="receive.php" method="POST" name="change-board">
+		<form action="change.php" method="POST" name="change-board">
 			<?php foreach ($boards as $board): ?>
 				<input name="change-board" type="submit" value="<?= $board ?>" class="btn btn-default">
 			<?php endforeach; ?>

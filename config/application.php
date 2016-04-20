@@ -16,7 +16,5 @@
 	$autoload->addPath('/models/');
 	$autoload->addPath('/lib/');
 
-
-	require "lib/utils.php";
 	require "bot_configs.php";
 ?>

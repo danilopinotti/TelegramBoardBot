@@ -8,7 +8,7 @@
 		private $boards_folder;
 
 		function __construct($token, $bot_name, $valid_boards, $boards_folder = "./boards/", $config_file = "./.config"){
-			$this->configs = new ConfigurationFile($config_file);
+			$this->configs = new ConfigurationFile($config_file, "aberto");
 			$this->token = $token;
 			$this->bot_name = $bot_name;
 			$this->valid_boards = $valid_boards;
