@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Open Sans";
-	src: url("<?= ASSETS_FOLDER ?>/fonts/OpenSans-ExtraBold.ttf");
+	src: url("assets/fonts/OpenSans-ExtraBold.ttf");
 }
 .message-container{	
 	text-align: center;	
