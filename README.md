@@ -22,14 +22,14 @@ php_value error_log "/var/www/html/logs/php_errors.log"
 ```
 2 - Configuração do arquivo application.php
 
- Abra o arquivo config/application.php
+ Abra o arquivo `config/application.php`
 	
- Altere a constante SITE_ROOT para o diretório relativo do sistema:
+ Altere a constante ``SITE_ROOT`` para o diretório relativo do sistema:
 ```php
 define("SITE_ROOT", "/github");
 ```
 #Configuração do Bot
-Arquivo de configuração: config/bot_config.php
+Arquivo de configuração: `config/bot_config.php`
 
 A configuração `"valid_boards"` é referente aos modelos de avisos possíveis. Será visto logo a frente como criar um modelo do zero manualmente.
 
