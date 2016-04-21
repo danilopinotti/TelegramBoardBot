@@ -76,7 +76,7 @@ O equipamento que irá servir como painel eletrônico (tablet por exemplo) dever
 
 ``http://some-server/board-bot``
 
-##Acesso ao painel offline para alterar o aviso
+##Acesso ao painel offline para alteração do aviso
 Acessar o seguinte endereço
 
 ``http://some-server/board-bot/pages/panel``
@@ -88,7 +88,7 @@ Após isso, use os comandos criados pelo usuário manualmente no arquivo de conf
 
 Exemplo de mensagem apra enviar para o bot (de acordo com as configurações atuais):
 
-``/atendimento_externo``
+``/reuniao``
 
 #Criação de novos avisos
 ##De forma manual
@@ -122,3 +122,13 @@ $telegramBotConfig["valid_boards"] = array(	// Message from TELEGRAM CHAT => boa
 ```
 
 Deixando como acima, quando for enviado o comando `/at_externo` para o BOT no Telegram, automaticamente o sistema mudará o aviso para o recém criado `atendimento_externo`
+
+##De forma automática
+Acesse o painel disponível em:
+
+`http://some-server/board-bot/pages/panel`
+
+Preencha o formulário para criação de novo modelo de aviso.
+
+Clique em `Criar`.
+
