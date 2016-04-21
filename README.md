@@ -71,3 +71,25 @@ As configurações a seguir são relacionadas à pasta onde os modelos de avisos
 	$telegramBotConfig["boards_folder"] = APP_ROOT_FOLDER."/boards";
 	$telegramBotConfig["config_file"] = APP_ROOT_FOLDER."/.config";
 ```
+#Usando o sistema
+##Acesso ao aviso eletrônico
+O equipamento que irá servir como painel eletrônico (tablet por exemplo) deverá acessar o endereço raiz da aplicação:
+
+``http://some-server/board-bot``
+
+##Acesso ao painel offline para alterar o aviso
+Acessar o seguinte endereço
+
+``http://some-server/board-bot/pages/panel``
+
+##Alterar status pelo Telegram
+Para poder alterar o aviso usando o Telegram, você, primeiramente, deve estar dentro da ``"white_list"`` presente nas configurações do bot.
+
+Após isso, use os comandos criados pelo usuário manualmente no arquivo de configurações do bot ou pelo painel offline.
+
+Exemplo de mensagem apra enviar para o bot nas configurações atuais:
+
+``/atendimento_externo``
+
+
+
