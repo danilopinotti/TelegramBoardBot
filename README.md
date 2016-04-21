@@ -26,7 +26,7 @@ php_value error_log "/var/www/html/logs/php_errors.log"
 	
  Altere a constante ``SITE_ROOT`` para o diretório relativo do sistema:
 ```php
-define("SITE_ROOT", "/github");
+define("SITE_ROOT", "/board-bot");
 ```
 #Configuração do Bot
 Arquivo de configuração: `config/bot_config.php`
@@ -38,8 +38,7 @@ A princípio, a configuração é formada com o conjunto dos comandos recebidos 
 $telegramBotConfig["valid_boards"] = array(	// Message from TELEGRAM CHAT => board name
 	    "/reuniao" => "reuniao",
 	    "/aberto" => "aberto",
-	    "/manutencao_datacenter" => "manutencao_datacenter",
-	    "/atendimento_externo" => "atendimento_externo"
+	    "/manutencao_datacenter" => "manutencao_datacenter"
 	));
 ```
 
@@ -87,9 +86,39 @@ Para poder alterar o aviso usando o Telegram, você, primeiramente, deve estar d
 
 Após isso, use os comandos criados pelo usuário manualmente no arquivo de configurações do bot ou pelo painel offline.
 
-Exemplo de mensagem apra enviar para o bot nas configurações atuais:
+Exemplo de mensagem apra enviar para o bot (de acordo com as configurações atuais):
 
 ``/atendimento_externo``
 
+#Criação de novos avisos
+##De forma manual
+Crie um arquivo apenas com código HTML para seu aviso.
 
+Exemplo de aviso:
+```html
+<h1>Em atendimento externo</h1>
+<h2>Voltamos em breve</h2>
+```
 
+Salve o aquivo com o nome em ``snake case`` dentro da pasta `boards` com a extensão `.phtml`
+
+Exemplo:
+``boards/atendimento_externo.phtml``
+
+No caso acima, o modelo ficou com o nome de `atendimento_externo`
+
+Após criar o modelo de aviso, você deve configurar o comando para ele chamar no telegram.
+
+Abra o arquivo de configuração `config/bot_config.php` e adicione a relação na configuração `"valid_boards"` como o exemplo a seguir:
+
+```php
+$telegramBotConfig["valid_boards"] = array(	// Message from TELEGRAM CHAT => board name
+	    "/reuniao" => "reuniao",
+	    "/aberto" => "aberto",
+	    "/manutencao_datacenter" => "manutencao_datacenter",
+	    "/at_externo" => "atendimento_externo"
+	));
+
+```
+
+Deixando como acima, quando for enviado o comando `/at_externo` para o BOT no Telegram, automaticamente o sistema mudará o aviso para o recém criado `atendimento_externo`
