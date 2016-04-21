@@ -27,9 +27,8 @@
 		    $values = array();
 		    if(file_exists($file)){
 		      $values = unserialize(file_get_contents($file));
-		      return $values;
 		  	}
-		    return null;
+		    return $values;
 		}
 
 		/*
