@@ -1,6 +1,9 @@
 # TelegramBoardBot
 Bot criado para o uso de um aviso eletrônico, podendo este ser controlado por um painel offline ou via comando no telegram.
 
+![alt tag](https://raw.githubusercontent.com/danilopinotti/telegram-board-bot/master/assets/images/example.jpg)
+
+
 #Configuração do sistema
 ##Configuração Automática
 Executar o seguinte script:
