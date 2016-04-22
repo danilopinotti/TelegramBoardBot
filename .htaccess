@@ -1,5 +1,5 @@
-php_value auto_prepend_file "/var/www/html/github/config/application.php"
+php_value auto_prepend_file '/var/www/board-bot/config/application.php'
 
 php_flag log_errors on
 
-php_value error_log "/var/www/html/github/logs/php_errors.log"
+php_value error_log '/var/www/board-bot/logs/php_errors.log'

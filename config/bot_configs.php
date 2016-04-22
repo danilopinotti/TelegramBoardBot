@@ -7,7 +7,7 @@
 	    "/aberto" => "aberto",
 	    "/manutencao_datacenter" => "manutencao_datacenter",
 	    "/atendimento_externo" => "atendimento_externo"
-	));
+	);
 
 	//List of allowed users.
 	$telegramBotConfig["white_list"] = array(	//Allowed persons (ID or Username) to interact with BOT

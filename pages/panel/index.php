@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title><?= APP_NAME ?>: Painel Offline</title>
+		<meta charset="UTF-8">
 		<?= ViewHelpers::stylesheetIncludeTag("application.css", "bootstrap.min.css", "bootstrap-theme.min.css"); ?>
 	</head>
 	<body>

@@ -1,6 +1,6 @@
 <?php
 	define("APP_NAME", "BoardBot");
-	define("SITE_ROOT", "/github");
+	define("SITE_ROOT", "/board-bot");
 	define("APP_ROOT_FOLDER", $_SERVER['DOCUMENT_ROOT'] . "/" . SITE_ROOT);
 	define("ASSETS_FOLDER", SITE_ROOT."/assets");
 
