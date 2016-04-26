@@ -29,7 +29,7 @@ php_value error_log "/var/www/html/logs/php_errors.log"
 	
  Altere a constante ``SITE_ROOT`` para o diretório relativo do sistema:
 ```php
-define("SITE_ROOT", "/board-bot");
+define('SITE_ROOT', '/board-bot');
 ```
 #Configuração do Bot
 Arquivo de configuração: `config/bot_config.php`
@@ -75,9 +75,9 @@ As configurações a seguir são relacionadas à pasta onde os modelos de avisos
 ```
 #Usando o sistema
 ##Acesso ao aviso eletrônico
-O equipamento que irá servir como painel eletrônico (tablet por exemplo) deverá acessar o endereço raiz da aplicação:
+O equipamento que irá servir como painel eletrônico (tablet por exemplo) deverá acessar o seguinte endereço:
 
-``http://some-server/board-bot``
+``http://some-server/board-bot/pages/board``
 
 ##Acesso ao painel offline para alteração do aviso
 Acessar o seguinte endereço
