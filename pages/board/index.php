@@ -1,10 +1,12 @@
 <?php
-	$bot = new BoardBot($telegramBotConfig["token"], 
-						$telegramBotConfig["bot_name"], 
+	$telegram_bot = new TelegramBot($telegramBotConfig["token"], $telegramBotConfig["bot_name"]);
+	$telegram_bot->setWhiteList($telegramBotConfig["white_list"]);
+
+	$bot = new BoardBot($telegram_bot,
 						$telegramBotConfig["valid_boards"], 
 						$telegramBotConfig["boards_folder"], 
 						$telegramBotConfig["config_file"]);
-	$bot->setWhiteList($telegramBotConfig["white_list"]);
+
 	$bot->loadBoard();
 ?>
 
