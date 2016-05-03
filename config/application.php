@@ -18,5 +18,6 @@
 
 	require 'bot_configs.php';
 
-	$access_pwd = 'cogeti-gp';
+	//Password to access the panel
+	$access_pwd = 'abc123';
 ?>

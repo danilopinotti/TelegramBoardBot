@@ -22,10 +22,14 @@
 		</style>
 	</head>
 	<body>
+		<!-- 
 		<span class="bar black"></span>
-		<span class="bar yellow"></span>
+		<span class="bar yellow"></span> 
+		-->
 		<div class="message-container">
-			<?php include($bot->getBoard()); ?>
+			<div class="message">
+				<?php include($bot->getBoard()); ?>
+			</div>
 		</div>
 		<?= ViewHelpers::javascriptIncludeTag("jquery-1.12.3.min.js", "ajax_board.js"); ?>
 	</body>

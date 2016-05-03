@@ -41,7 +41,7 @@
       <?php endforeach ?>
 		<div class="container">
 			<?php require "_boards_panel.php" ?>
-			<?php require "_create_board_panel.php" ?>
+			<?php //require "_create_board_panel.php" ?>
 		</div>
 		<?= ViewHelpers::javascriptIncludeTag("jquery-1.12.3.min.js", "bootstrap.min.js") ?>
 	</body>

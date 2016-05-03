@@ -2,12 +2,35 @@
 	font-family: "Open Sans";
 	src: url("assets/fonts/OpenSans-ExtraBold.ttf");
 }
-.message-container{	
-	text-align: center;	
+
+.message-container{
+	width:100%;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+
+.message{
+	/*text-align: center;	
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);*/
+
+	width: 50%;
+	text-align: center;
 	font-family: sans-serif, "Open Sans";
 	font-weight: 700;
 	font-size: 2em;
@@ -29,8 +52,6 @@
 	height: 40px;
 	top: 0;
 }
-
-@import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
