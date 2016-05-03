@@ -17,4 +17,6 @@
 	$autoload->addPath('/lib/');
 
 	require 'bot_configs.php';
+
+	$access_pwd = 'cogeti-gp';
 ?>

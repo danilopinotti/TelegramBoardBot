@@ -4,7 +4,7 @@ class SessionHelpers {
   public static function shouldBeAutenticated(){
     if (!(isset($_SESSION['user']))) {
       Flash::message('danger', 'Você deve estar logado para acessar está página!');
-      ViewHelpers::redirectTo('/sessions/new.php');
+      ViewHelpers::redirectTo('../../index.php');
     }
   }
 
@@ -16,11 +16,11 @@ class SessionHelpers {
   }
 
   public static function currentUser() {
-    return User::findByEmail($_SESSION['user']['email']);
+    return $_SESSION['user']['email'];
   }
 
   public static function logIn($user) {
-    $_SESSION['user']['email'] = $user->getEmail();
+    $_SESSION['user'] = $user;
   }
 
   public static function isLoggedIn() {

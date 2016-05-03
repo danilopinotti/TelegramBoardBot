@@ -1,3 +1,6 @@
+<?php
+	SessionHelpers::shouldBeAutenticated();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
