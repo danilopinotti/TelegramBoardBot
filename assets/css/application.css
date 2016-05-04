@@ -22,19 +22,22 @@
     box-align:center;
 }
 
-.message{
-	/*text-align: center;	
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);*/
-
-	width: 50%;
+.message h1{
 	text-align: center;
 	font-family: sans-serif, "Open Sans";
 	font-weight: 700;
-	font-size: 2em;
+	font-size: 4em;
 }
+
+.message h2{
+  text-align: center;
+  font-family: sans-serif, "Open Sans";
+  font-weight: 700;
+  font-size: 3em;
+}
+
+
+
 .bar{
     height: 25px;
     position: fixed;

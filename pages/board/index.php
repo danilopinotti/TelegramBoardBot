@@ -15,22 +15,24 @@
 	<head>
 		<title><?= APP_NAME ?></title>
 		<meta charset="UTF-8">
-		<?= ViewHelpers::stylesheetIncludeTag("application.css"); ?>
+		<?= ViewHelpers::stylesheetIncludeTag("bootstrap.min.css", "bootstrap-theme.min.css", "application.css", "sticky-footer-navbar.css"); ?>
 		<!-- <meta http-equiv="refresh" content="120" > -->
-		<style>
-			@import url("<?= ASSETS_FOLDER ?>/fonts/OpenSans-ExtraBold.ttf");
-		</style>
 	</head>
 	<body>
 		<!-- 
 		<span class="bar black"></span>
 		<span class="bar yellow"></span> 
 		-->
-		<div class="message-container">
-			<div class="message">
-				<?php include($bot->getBoard()); ?>
-			</div>
+		<div class="container">
+				<div class="message text-center">
+					<?php include($bot->getBoard()); ?>
+				</div>
 		</div>
-		<?= ViewHelpers::javascriptIncludeTag("jquery-1.12.3.min.js", "ajax_board.js"); ?>
+		<footer class="footer">
+		    <div class="container">
+		      <p class="text-muted">COGETI - GP</p>
+		    </div>
+		</footer>
+		<?= ViewHelpers::javascriptIncludeTag("jquery-1.12.3.min.js", "ajax_board.js", "bootstrap.min.js"); ?>
 	</body>
 </html>
