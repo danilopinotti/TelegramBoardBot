@@ -12,10 +12,16 @@
 				<p><?= $flash_msg ?></p>
 			</div>
 		<?php endforeach ?>
-		
-		<?= ViewHelpers::linkTo("#", "Panel", 'data-toggle="modal" data-target="#login-modal"') ?>
-		<br>
-		<?= ViewHelpers::linkTo("/board", "Board") ?>
+		<div class="container">
+		<div class="jumbotron">
+			<h1>Sistema de aviso eletrônico do COGETI-GP</h1>
+			<p>Sistema desenvolvido para controle do aviso colocado no painel eletrônico localizado na porta do COGETI - GP</p>
+		</div>
+			<div class="list-group">
+				<?= ViewHelpers::linkTo("#", '<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Painel de controle', 'data-toggle="modal" data-target="#login-modal" class="list-group-item"') ?>
+				<?= ViewHelpers::linkTo("/board", '<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Aviso', 'class="list-group-item"') ?>
+			</div>
+		</div>
 
 		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 			<div class="modal-dialog">
