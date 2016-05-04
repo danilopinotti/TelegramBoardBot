@@ -38,7 +38,7 @@
 				$text = preg_replace($match, "", $last_message["text"]);		
 
 				if(substr($text,0,1) == "/"){
-					$board_name = $this->getModelName($last_message["text"]);
+					$board_name = $this->getModelName($text);
 					if($board_name){
 						$this->configs->setConfiguration("last_board",$board_name);
 						$this->configs->setConfiguration("last_board_off",$board_name);
