@@ -27,7 +27,7 @@
 			//Invalid token or without Internet connection
 			$this->telegram_bot->update();
 			if(!$this->telegram_bot->getUpdates()){
-				echo "Sem conexão com a internet ou token inválido.";
+				Flash::message("danger","Sem conexão com a internet.");
 				return;
 			}
 

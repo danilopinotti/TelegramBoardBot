@@ -23,6 +23,12 @@
 		<span class="bar black"></span>
 		<span class="bar yellow"></span> 
 		-->
+		<?php foreach (Flash::message() as $flash_type => $flash_msg): ?>
+         <div class="alert alert-<?= $flash_type ?>" role="alert">
+           <a class="close" data-dismiss="alert">x</a>
+           <p><?= $flash_msg ?></p>
+         </div>
+    	<?php endforeach ?>
 		<div class="container">
 				<div class="message text-center">
 					<?php include($bot->getBoard()); ?>
